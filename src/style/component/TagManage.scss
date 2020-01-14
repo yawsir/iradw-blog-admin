@@ -1,0 +1,59 @@
+.tag-manage {
+    width: 100%;
+    background: #fff;
+    min-height: 200px;
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .tag-table {
+        width: 100%;
+        text-align: center;
+        .label-list {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            margin-bottom: 10px;
+            padding: 10px 0;
+            border-bottom: 2px solid #cdcdcd;
+            .label-item {
+                flex: 1;
+                text-align: center;
+            }
+        }
+        
+        .tag-list {
+            width: 100%;
+            list-style: none;
+            .tag-item {
+                width: 100%;
+                // border: 1px solid;
+                // padding: 5px;
+                // box-sizing: border-box;
+
+                .tag-info-list {
+                    width: 100%;
+                    display: flex;
+                    list-style: none;
+                    margin-bottom: 10px;
+                    li {
+                        flex: 1;
+                        text-align: center;
+                    }
+
+                    .tag-info-color {
+
+                        .bg-color {
+                            width: 47px;
+                            height: 20px;
+                            background: #f00;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

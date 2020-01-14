@@ -1,0 +1,11 @@
+.article-list {
+    width: 100%;
+    .article-item {
+        cursor: pointer;
+        .ant-list-item-meta-title {
+            color: #1890FF;
+            font-size: 15px;
+        }
+    }
+    
+}

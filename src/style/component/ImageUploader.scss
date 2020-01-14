@@ -1,0 +1,16 @@
+.image-uploader {
+    width: 100%;
+
+    .url-list {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+
+        .url {
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom: 1px solid #cdcdcd;
+        }
+    }
+}
