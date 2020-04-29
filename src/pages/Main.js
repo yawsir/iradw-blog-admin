@@ -2,6 +2,7 @@ import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 import Login from './Login'
 import Admin from './Admin'
+
 function Main() {
     return (
         <Router>
