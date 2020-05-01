@@ -38,7 +38,6 @@ export default function ModifyArticleUI({title, introduce, content, introducePre
                     </div>
                     <div className="markdown-preview content-preview" dangerouslySetInnerHTML={{__html:contentPreview}}></div>
                 </div>
-
                 
             </div>
 
