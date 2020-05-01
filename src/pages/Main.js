@@ -1,15 +1,18 @@
-import React from 'react'
+import React, {lazy, Suspense} from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
-import Login from './Login'
 import Admin from './Admin'
+import {Spin} from 'antd'
+const Login = lazy( () => import('./Login'))
 
 function Main() {
     return (
-        <Router>
+        <Suspense fallback={<Spin></Spin>}>
+        <Router >
             <Route path="/" exact component={Admin}></Route>
             <Route path="/Login" exact component={Login}></Route>
             <Route path="/Admin" component={Admin}></Route>
         </Router>
+        </Suspense>
     )
 }
 

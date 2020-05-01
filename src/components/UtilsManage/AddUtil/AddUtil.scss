@@ -1,0 +1,88 @@
+.utils-manage {
+    width: 100%;
+    font-size: 16px;
+    background: #fff;
+    padding: 1rem;
+    .util-manage-title {
+        font-size: 18px;
+        background: #74b9ff;
+        color: #fff;
+        padding: .5rem 1rem;
+        border-radius: 1rem;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: center;
+    }
+
+    .add-util-row {
+        display: flex;
+        margin: .5rem 0;
+        
+        label {
+            flex: 1;
+            text-align: center;
+        }
+        input {
+            flex: 8;
+        }
+    }
+
+    .add-util {
+        width: 100%;
+        padding-bottom: 1rem;
+        .add-util-inner {
+            display: flex;
+            .add-util-writing {
+                flex: 3;
+                
+            }
+        }
+        
+
+        .add-util-preview {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .util-item {
+                width: 100%;
+                padding: .4rem .2rem;
+                
+                .util-item-wrap {
+                    width: 90%;
+                    margin: 0 auto;
+                    border: 1px solid #cdcdcd;
+                    transition: all .2s;
+                    display: block;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                    .img-wrap {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding-top: 1rem;
+                        img {
+                            display: block;
+                            width: 6rem;
+                            height: 6rem;
+                            border-radius: 50%;
+                        }
+                    }
+                    .util-item-name {
+                        text-align: center;
+                    }
+                }
+    
+                
+            }
+        }
+    }
+
+    .add-cate {
+
+    }
+}
