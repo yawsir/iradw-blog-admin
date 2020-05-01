@@ -1,23 +1,24 @@
-import React, {useRef} from 'react'
+import React, { useState, useEffect} from 'react'
 import {Modal, Input} from 'antd'
 
 const AddUtilModal = ({isShow, confirmLoading, onOk, onCancel, afterClose, title, values={}}) => {
 
-    const nameRef = useRef()
-    const siteRef = useRef()
-    const logoRef = useRef()
+    const [utilInfo, setUtilInfo] = useState({})
+    useEffect( () => {
+        setUtilInfo(values)
+    }, [values])
 
-    const ok = () => {
-        onOk(
-            {
-                utilName: nameRef.current.state.value,
-                utilSite: siteRef.current.state.value,
-                utilLogo: logoRef.current.state.value
-            }
-        )
+    const changed = (value, key) => {
+        setUtilInfo(pre => Object.assign({}, {...pre}, {[key]: value}))
     }
 
-    let {utilName, utilLogo, utilSite} = values
+    const ok = () => {
+        console.log(utilInfo)
+        onOk(utilInfo)
+        setUtilInfo({})
+    }
+
+    let {utilName, utilLogo, utilSite} = utilInfo
     return (
         <Modal title={title}
             centered={true}
@@ -28,9 +29,9 @@ const AddUtilModal = ({isShow, confirmLoading, onOk, onCancel, afterClose, title
             afterClose={afterClose}
             destroyOnClose={true}
         >
-            <Input size="large" value={utilName} ref={nameRef} addonBefore={"工具标题"}></Input>
-            <Input size="large" value={utilSite} ref={siteRef} addonBefore={"网站地址"}></Input>
-            <Input size="large" value={utilLogo} ref={logoRef} addonBefore={"logo地址"}></Input>
+            <Input size="large" value={utilName} onChange={e => changed(e.target.value, 'utilName')} addonBefore={"工具标题"}></Input>
+            <Input size="large" value={utilSite} onChange={e => changed(e.target.value, 'utilSite')} addonBefore={"网站地址"}></Input>
+            <Input size="large" value={utilLogo} onChange={e => changed(e.target.value, 'utilLogo')} addonBefore={"logo地址"}></Input>
         </Modal>
     )
 }
