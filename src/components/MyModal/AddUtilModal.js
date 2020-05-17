@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import {Modal, Input} from 'antd'
 
-const AddUtilModal = ({isShow, confirmLoading, onOk, onCancel, afterClose, title, values={}}) => {
+const UtilModal = ({isShow, onOk, onCancel, values={}}) => {
 
     const [utilInfo, setUtilInfo] = useState({})
     useEffect( () => {
@@ -13,20 +13,18 @@ const AddUtilModal = ({isShow, confirmLoading, onOk, onCancel, afterClose, title
     }
 
     const ok = () => {
-        console.log(utilInfo)
         onOk(utilInfo)
         setUtilInfo({})
+
     }
 
     let {utilName, utilLogo, utilSite} = utilInfo
     return (
-        <Modal title={title}
+        <Modal title="修改工具属性"
             centered={true}
             visible={isShow}
-            confirmLoading={confirmLoading}
             onOk={ok}
             onCancel={onCancel}
-            afterClose={afterClose}
             destroyOnClose={true}
         >
             <Input size="large" value={utilName} onChange={e => changed(e.target.value, 'utilName')} addonBefore={"工具标题"}></Input>
@@ -35,4 +33,4 @@ const AddUtilModal = ({isShow, confirmLoading, onOk, onCancel, afterClose, title
         </Modal>
     )
 }
-export default AddUtilModal
+export default UtilModal
